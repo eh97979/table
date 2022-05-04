@@ -11,6 +11,7 @@ sma50 = talib.SMA(a1['Adj Close'], 50)
 sma21 = talib.SMA(a1['Adj Close'], 21)
 
 
+
 b = 0
 
 
@@ -20,11 +21,13 @@ for i in sma50:
     try:
         if i >= sma21[b-1]:
             if i <= sma21[b]:
-                print('покупаю', sma21[b:b+1])
+                date_b = str(sma21[b:b+1])
+                print('покупаю', date_b[5:15:])
 
         if i <= sma21[b - 1]:
             if i >= sma21[b]:
-                print('продаю', sma21[b:b+1])
+                date_s = str(sma21[b:b + 1])
+                print('продаю', date_s[5:15:])
     except IndexError:
         break
 
